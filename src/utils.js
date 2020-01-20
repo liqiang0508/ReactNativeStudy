@@ -1,3 +1,4 @@
+import { Alert } from 'react-native';
 export default class utils {
 
     static show() {
@@ -25,6 +26,11 @@ export default class utils {
     {
 
         return (a+b);
+    }
+
+    static showAlert(title,message,buttons)
+    {
+        Alert.alert(title,message,buttons)
     }
 
 }

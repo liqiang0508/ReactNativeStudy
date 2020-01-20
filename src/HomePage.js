@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button,TouchableHighlight,TouchableNativeFeedback,StyleSheet } from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { View, Text, Button,TouchableHighlight,TouchableNativeFeedback,StyleSheet,Platform,ToastAndroid} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import utils from "./utils"
 export default class HomeScreen extends Component {
@@ -75,12 +74,25 @@ export default class HomeScreen extends Component {
     }
 
     loginBtnClick=()=>{
-        this.props.navigation.navigate('Details')
+        // this.props.navigation.navigate('Details')
         utils.show()
-        // alert("hh")
+        utils.showAlert("title","hello world",[
+            {text:"yes",onPress:()=>{this.showToast("yes")},style:"cancel"},
+            {text:"no",onPress:()=>{this.showToast("no")},style:"destructive"}
+        ], {cancelable: false},)
+        // this.showToast(  new Date().toLocaleTimeString())
+      
+        // showAlert
+        // Alert.alert("hh","123",[{text:"yes",onPress : ()=>{ console.log("yes")}},{text:"no",onPress : ()=>{ console.log("no")} }])
         // this.setText("LOL")
     }
 
+    showToast(str){
+        if(Platform.OS=="android")
+        {
+            ToastAndroid.show(str, ToastAndroid.SHORT);
+        }
+    }
     login=()=> {
         if ( this.TextLogin)
         {
