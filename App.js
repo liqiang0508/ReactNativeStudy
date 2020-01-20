@@ -1,35 +1,10 @@
-// import React, { Component } from 'react';
-// import { StyleSheet, Button,Alert, TextInput, Text, View } from 'react-native';
-
-// export default class HelloWorldApp extends Component {
-
-//   state = {
-//     text: ''
-//   }
-
-//   render() {
-//     return (
-//       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-//         <Text style={{ fontSize: 30, color: "green" }}>{this.state.text}</Text>
-//         <TextInput style={{ height: 40 }} placeholder="Type here to translate!"
-//           onChangeText={(text) => this.setState({ text })}
-//           value={this.state.text} />
-
-//         <Button title="press me" onPress={() => {  console.log("click btn**") }} />
-
-//       </View>
-//     );
-//   }
-// }
-
-
 import React from 'react';
 import 'react-native-gesture-handler';
 import { View, Text, Button } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator,TransitionSpecs,TransitionPresets} from 'react-navigation-stack';
 import HomeScreen from "./src/HomePage";
-import DetailsScreen from "./src/MyPage";
+import DetailsScreen from "./src/DetailsScreen";
 
 const AppNavigator = createStackNavigator({
   Home: {
@@ -54,16 +29,5 @@ const AppNavigator = createStackNavigator({
   // }), 
 });
 
-const config = {
-  animation: 'spring',
-  config: {
-    stiffness: 1000,
-    damping: 500,
-    mass: 3,
-    overshootClamping: true,
-    restDisplacementThreshold: 0.01,
-    restSpeedThreshold: 0.01,
-  },
-};
  
 export default createAppContainer(AppNavigator);

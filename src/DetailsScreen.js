@@ -4,7 +4,7 @@ import { StackActions, NavigationActions } from 'react-navigation';
  
 export default class DetailsScreen extends Component {
     static navigationOptions  = {
-        title: 'DetailsLOL',
+        title: 'Details',
         // titleStyle: {color: '#black'},
         // headerStyle:{backgroundColor:'blue'},
 
@@ -14,7 +14,7 @@ export default class DetailsScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Detailsppppp</Text>
+        <Text>Details</Text>
         <Button
           title="Go Home"
           onPress={() => {
