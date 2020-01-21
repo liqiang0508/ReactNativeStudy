@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, TouchableHighlight, TouchableNativeFeedback, StyleSheet, Platform, ToastAndroid } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import utils from "./utils"
+import ConstantItem from './ConstantItem'
 export default class HomeScreen extends Component {
     static navigationOptions = {
         title: 'Login',
@@ -54,7 +55,7 @@ export default class HomeScreen extends Component {
         this.intervalFun = setInterval(() => {
             this.login()
         }, 1000);
-
+        console.log(ConstantItem[1].Name)
         // this.delayFun = utils.DelayFun(()=>{
         //     console.log("delayer====")
         // },1000)
@@ -82,6 +83,7 @@ export default class HomeScreen extends Component {
         //     { text: "no", onPress: () => { this.showToast("no") }, style: "destructive" }
         // ], { cancelable: false })
         this.showToast(this.state.userName)
+        this.Account.blur()//失去焦点
         // this.showToast(  new Date().toLocaleTimeString())
 
         // showAlert
